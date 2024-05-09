@@ -8,4 +8,13 @@
 
   <PropertyGroup Condition=" '$(RunConfiguration)' == 'https' " />
   <PropertyGroup Condition=" '$(RunConfiguration)' == 'http' " />
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.18" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Views\Number\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Views\Number\" />
+  </ItemGroup>
 </Project>

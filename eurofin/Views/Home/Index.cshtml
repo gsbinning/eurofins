@@ -3,7 +3,40 @@
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
+    <h1 class="display-4">Welcome to Eurofins</h1>
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+
+    <h2>EuroFin Code</h2>
+
+    <form id="numberForm">
+        <label for="startNumber">Start Number:</label>
+        <input type="number" id="startNumber" name="startNumber" value="1">
+        <label for="endNumber">End Number:</label>
+        <input type="number" id="endNumber" name="endNumber" value="100">
+        <button type="submit">Generate</button>
+    </form>
+
+    <div id="output"></div>
 </div>
 
+<script>document.getElementById('numberForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        var startNumber = parseInt(document.getElementById('startNumber').value);
+        var endNumber = parseInt(document.getElementById('endNumber').value);
+
+        var output = document.getElementById('output');
+        output.innerHTML = '';
+
+        for (var i = startNumber; i <= endNumber; i++) {
+            if (i % 3 === 0 && i % 5 === 0) {
+                output.innerHTML += 'Eurofins ';
+            } else if (i % 3 === 0) {
+                output.innerHTML += 'Three ';
+            } else if (i % 5 === 0) {
+                output.innerHTML += 'Five ';
+            } else {
+                output.innerHTML += i + ' ';
+            }
+        }
+    });</script>
